@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">checker</string>
+    <string name="action_settings">Settings</string>
+    <string name="categoryName">Kategorie</string>
+    <string name="questionName">Frage</string>
+    <string name="answerName">Antwort</string>
+    <string name="buttonName">GO!</string>
+    <string name="settingsText">COPYRIGHT \n Diese App wurde von Julian Karrer gebastelt. Die Vokabeln stammen aus unserem Sprachunterricht, vollkommen garaniteren, dass alle Vokabeln stimmen, kann ich aber nicht. Wer sich den Sourcecode der App anschauen möchte kann mir gerne auf juliankarrer@t-online.de schreiben. Ich erhebe kein Copyright auf irgendwas, außer für kommerzielle Zwecke, das hier soll gratis bleiben. Viel Spaß!</string>
+    <string name="searchBarHint">Suchen …</string>
+</resources>

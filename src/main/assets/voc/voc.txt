@@ -1,0 +1,568 @@
+%VERBEN
+lala#schlafen
+amka#aufstehen/aufwachen
+piga mswaki#zähneputzen
+oga#duschen
+vaa#anziehen
+vua#ausziehen
+pika#kochen
+kunyua#trinken
+kula#essen
+soma#lesen, lernen
+andika#schreiben
+sikiliza#zuhören
+zungumza#reden, quatschen
+angalia#anschauen
+lia#weinen
+piga simu#telephonieren
+piga picha#photographieren
+piga pasi#bügeln
+fua#waschen (klamotten)
+cheza#spielen, tanzen
+endesha#fahren
+nunua#kaufen
+uza#verkaufen
+lipa#bezahlen
+fikiri#denken
+kaa#verbleiben, sitzen
+toka#herkommen, aus ... kommen
+itwa#heißen
+kuja#kommen
+enda#gehen, sich fortbewegen
+rudi#zurückkommen
+subiri#warten
+ondoka#verlassen
+fundisha#unterrichten
+jifunza#lernen
+weza#können
+elewa#verstehen
+jua#wissen
+chelewa#sich verspäten
+wahi#pünktlich sein
+choka#müde sein
+pumzika#pause machen, chillen
+taka#wollen
+hitaji#brauchen, müssen
+anza#anfangen
+maliza#aufhören, beenden
+tumia#benutzen
+penda#mögen, lieben
+furahi#glücklich sein, sich freuen
+omba#um etwas bitten, beten
+saidia#helfen
+ongea#sprechen
+funga#schließen, verpacken
+fungua#öffnen
+peleka#bringen, mitbringen
+leta#herbringen
+weka#reinstecken, hinstellen
+jaribu#versuchen, probieren, in Versuchung führen
+kimbia#rennen
+pita#vorbeigehen, ausweichen
+fika#ankommen
+sema#sagen
+piga#schlagen
+tulia#sich beruhigen, runterkommen
+imba#singen
+jumlisha#addieren
+toa#subtrahieren, wegmachen, abheben
+gawanya#aufteilen, teilen
+zidisha#multiplizieren
+uliza#fragen
+bembeleza#streicheln
+kuna#kratzen
+cheka#lachen
+kuwa#sein
+kumbuka#sich erinnern (auch: vermissen)
+zaliwa#geboren sein
+pata#bekommen, finden
+tembelea#besuchen
+punguza#verringern
+ambia#sagen
+rudisha#zurückgeben/-bringen
+sahau#vergessen
+kutana na#sich treffen mit
+endelea#weitermachen
+paka#anstreichen, malen
+tengeneza#machen, basteln, reparieren
+chora#zeichnen
+nuka#stinken
+nukia#duften
+zingua#scherzen
+shika#halten (zB. shika mkono)
+vunjika#kaputt sein
+umwa#krank sein, weh tun
+kata#schneiden, sägen
+rekabisha#reparieren
+vuta#ziehen
+sukuma#drücken
+koprinti#ausdrucken
+lalamika#nörgeln, sich beschweren
+onyesha#zeigen
+lewa#betrunken sein
+olewa#(weibl.) verheiratet sein
+oa#(männl.) verheiratet sein
+ogopa#sich fürchten, Angst haben
+isha#ausgehen, leer sein
+acha#aufhören, stoppen
+baki#verbleiben, sich aufhalten
+geuka#sich umdrehen (geuka nyuma)
+potea#sich verlieren, verloren sein
+kasiriki#wütend/sauer sein
+simama#stehen, stoppen
+shiba#satt sein
+jaa#hunger haben
+kosa#sich vertun/falsch sein
+jibu#antworten
+salimia#grüßen
+hakikisha#sichergehen
+ingiza#einfügen
+mimina#einschenken
+tumia#senden
+takia#jmd. etwas wünschen
+andaa#vorbereiten
+menya#schälen
+beba#tragen
+oka#backen
+shona#nähen
+fagia#fegen
+pokea#erhalten
+bomoa#abreißen, zerstören
+kubali#akzeptieren, zustimmen
+haribu#zerstören
+hesabu#zählen
+pamba#dekorieren
+piga kilele#laut sein, Krach machen
+panga#mieten
+amsha#aufwecken
+iba#jemanden beklauen
+sumbua#stören
+badilisha#ändern
+ita#rufen
+pakua#Essen anrichten, servieren
+okoa#retten
+saliti#betrügen
+sulubu#kreuzigen
+shindwa#verlieren, besiegt sein
+pona#genesen
+lewa#betrunken sein
+amoa#entscheiden
+adhibu#bestrafen
+zogesa#(ein Ding) bewegen, verrücken
+zogea#(ein Mensch) bewegen, verrücken, aufrücken
+osha#waschen (Geschirr)
+futa#löschen, radieren
+pendelea#etwas lieber mögen
+sikitika#traurig sein
+alika#einladen
+ungua#verbrennen
+amini#glauben
+gundi#kleben
+ota#träumen
+ingia#hereinkommen
+wakika#sicher sein
+hama#sich bewegen
+hamisha#etwas bewegen
+shuka#aussteigen
+shusha#jemanden aussteigen lassen/runterlassen
+dondosha, angusha#runterfallen lassen
+sahihisha#korrigieren
+fuata#folgen
+shangaa#überrascht/geschockt sein
+pungua#weniger sein, verringert werden
+kataa#ablehnen, verneinen
+washa#anschalten
+lazimisha#zwingen
+yeyuka#schmelzen
+badilika#anders sein, sich verändert haben
+anguka#fallen
+nyonya#die Brust geben
+nusa#riechen
+julisha#informieren
+chemka#gekocht werden
+chemsha#etwas zum kochen bringen
+elimisha#bilden, lehren
+nenepesha#mästen, fett machen
+fupisha#verkürzen
+hatarisha#etwas gefährlich machen
+ongo#lügen
+safiri#reisen
+safisha#aufräumen, säubern
+ua#töten
+uma#beißen
+kufa#sterben
+tafuta#suchen
+suka#flechten
+rakisisha#vereinfachen (mathematisch)
+taja#nennen
+sima#ausschalten
+azima#ausleihen
+pa#geben
+nja#hungrig sein
+sherekia#feiern
+%ADJEKTIVE
+refu#lang,hoch
+dogo#klein
+chafu#dreckig
+zuri#schön, gut
+nene#fett
+chungu#bitter, sauer
+ngapi#wie viel?
+pya#neu
+vivu#faul
+bovu#kaputt, verrottet
+zito#schwer
+pana#weit
+zima#vollständig, heile
+fupi#kurz, klein
+kubwa#groß
+safi#sauber
+baya#schlecht, hässlich
+tamu#lecker, süß
+kali#stark, streng, scharf
+geni#neu (Menschen: Gäste)
+chache#wenige
+gumu#hart, schwer
+tupu#leer
+kavu#trocken, schlicht
+%NOMEN
+mji#Stadt
+choo#Klo, WC
+chuo#Universität
+picha#Bild
+piki piki#Motorrad
+musiki#Musik
+kitabu#Buch
+barua#Brief
+hisabati#Mathematik
+lugha#Sprache
+(ma)swali#Frage
+(ma)zoezi#Aufgabe
+mwanza#Anfang
+mwisho#Ende
+mfano#Beispiel
+nchi#Land, Nation
+mti#Baum
+michezo#Spiele,Sport
+meza#Tisch
+daftari#Heft
+nusu#Hälfte
+robo#Viertel
+(ma)saa#Uhr
+muda#Zeit
+dakika#Minute
+mlima#Berg
+nyumba#Haus
+mpira#Ball/Fußball
+sinema#Kino
+ua#Blume
+mshumaa#Kerze
+kalamu#Füller
+penseli#Bleistift
+mkasi#Schere
+mswaki#Zahnbürste
+msikiti#Moschee
+kanisa#Kirche
+kipindi, leseni#Unterrichtsstunde
+kiti#Stuhl
+kitanda#Bett
+pesa/hela#Geld
+basi#Bus
+kabati#Schrank
+ndoo#Eimer
+pasi#Bügeleisen
+mlango#Tür
+dirisha#Fenster
+ngazi#Treppen
+bafu#Badezimmer
+(ma)gari#Auto
+kikapu#Korb
+mpira wa kikapu#Basketball
+begi#Koffer
+baisikeli#Fahrrad
+ukurasa#Seite
+fimbo ya uchawi#Zauberstab
+uchawi#Magie
+laini#SIM Karte
+nguo#Kleidung
+TV#TV
+bahari#Ozean, Meer
+puru#Pool / Billiard
+(ma)neno#Wort
+shule#Schule
+mchawi#Magier, Zauberer
+karata#Kartenspiel
+pochi#Beutel, Geldbeutel
+sendazi#Sandalen
+mungu#Gott
+mbao#Holz
+kibao#Brett / Holzstück
+moto#Feuer
+dawa#Medizin
+sehemu#(Stadt)viertel, Bruchteil,Teil
+usahihi#Sammlung
+pembe#Winkel
+jumla#Summe
+themani#Wert (mathematisch)
+kundi#Gruppe
+kelele#Lärm
+redio#Radio
+karatasi#Papier/Blatt
+shida#Problem
+upendo#Liebe
+masomo#Studien, Fächer
+njia#Weg
+kijiji#Dorf
+ufaranza#Frankreich
+ujerumani#Deutschland
+mshahara#Gehalt
+mto#Fluss
+kinyume#Gegenteil
+chumba#Zimmer
+mahali#Ort
+zamani#Vergangenheit
+ukuta#Wand
+siwa#See
+taa#Licht/Lampe
+thelugi / barafu#Schnee
+mzitu#Wald
+(ma)birika#Teekessel
+mzigo#Gepäck
+shambaa#Farm
+mkoa#Region
+jamii#Gemeinschaft, Gesellschaft
+ukimwi#HIV/AIDS
+ugonjwa#Krankheit
+peni#Kugelschreiber
+krismasi#Weihnachten
+takataka#Müll
+kimondo#Sternschnuppe
+maumivu#Schmerzen
+nyota#Stern
+dunia#Welt, Erde
+siku ya kuzaliwa#Geburtstag
+nyuta#Riß
+(ma)daraja#Brücke
+siasa#Politik
+ufagio#Besen
+nafassi#Chance
+uongo#Lüge
+sumu#Gift
+barabara ya vumbi#Schotterstraße
+harusi#Hochzeit
+msiba#Beerdigung
+jiwe#Stein
+hadithi#Geschichte, Erzählung
+sheria#Regel, Gesetz
+mithiami#Test, Examen
+mimba#Schwangerschaft
+(ma)godoro#Matratze
+vyombo#Geschirr
+kifupi#Abkürzung
+kitendo#Handlung, Tätigkeit
+miba#Stacheln
+ndoto#Traum
+jukwaa#Stadium
+uchafu#Dreck
+maporomoko ya maji#Wasserfall
+mvuvi#Angler, Fischer
+mnazi#Kokospalme
+pwani#Küste
+sherehe#Feier
+ardhi#Boden, Erde
+shimo#Höhle
+vinao#Glitter
+viungu#Gewürze
+msongamano#Bevölkerung, Population
+bendera#Flagge
+mazao#Pflanzen, Angebautes
+uzi#Faden
+%KÖRPERTEILE
+jicho - macho#Auge
+ndevu#Bart
+mdomo#Mund
+pua#Nase
+sura/uso#Gesicht
+kichwa#Kopf
+nywele#Haare
+ubongo#Gehirn
+sikio#Ohr
+shavu#Backe
+mgongo#Rücken
+moyo#Herz
+shingo#Hals
+ngozi#Haut/Leder
+bega#Schulter
+mkono#Arm/Hand
+kifua#Brust/Oberkörper
+kiwiko#Ellbogen
+hipsi#Hüfte
+kitovu#Bauchnabel
+tumbo#Bauch
+tako/kalio#Hintern
+mguu#Bein/Fuß
+mfupa#Knochen
+kidole#Finger/Zehen
+paja#Oberschenkel
+damu#Blut
+(ma)goti#Knie
+mbavu#Rippen
+ziwa/titi/nyunyo#Brust
+kiuno#Becken
+jino#Zahn
+kidevu#Kinn
+%KLEIDUNG
+kacha#Armband
+mkanda#Gürtel
+mawani#Brille
+pete#Ring
+gauni#Kleid
+shati#Hemd
+tisheti#T-Shirt
+suruali#Hose
+sketi#Rock
+jaketi/koti#Jacke
+sweta#Sweater
+chupi#Unterwäsche
+viatu#Schuhe
+kofia#Hut
+mzura#Mütze
+soksi#Socken
+%TIERE
+kifaru#Nashorn
+kiboko#Nilpferd
+mbwa#Hund
+paka#Katze
+ndege#Vogel / Flugzeug
+farasi#Pferd
+sungura#Hase/Kaninchen
+chui#Leopard
+kipepeo#Schmetterling
+tembo#Elephant
+simba#Löwe
+nyani#Affe
+ngulule#Schwein
+kasuku#Papagai
+%PERSONEN
+nesi#Krankenpfleger
+daktari#Doktor, Artzt
+polisi#Polizist
+mchungali#Priester
+mpichi#Koch
+mwanafunzi#Schüler
+wazazi#Eltern
+familia#Familie
+watanzania#Tansanier
+mzungu#Reisender, Irrender, (Weißer)
+jirani#Nachbar
+rafiki#Freund
+dereva#Fahrer
+rais#Präsident
+polisi/askari#Polizist
+daktari#Doktor med.
+mme#Ehemann
+mwanamme / mwanamume#Mann
+mke#Ehefrau
+mwanamke#Frau
+msichana#Mädchen
+mvulana#Junge
+mtu#Person
+mmareani#Amerikaner
+mjerumani#Deutscher
+mwalimu#Lehrer
+mtoto#Kind
+mtalii#Tourist
+kiziwi#Tauber
+kipofu#Blinder
+kijana#Jugendlicher
+kilema#Behinderter
+mzee#Alter Mann
+mgonjwa#Kranker
+(ma)sikini#Armer
+(ma)tajiri#Reicher
+mfanya kazi#Arbeiter
+mkulima#Bauer
+mlinzi#Wachmann
+kibaka#Einbrecher
+mwenzangu#(mein) Freund, Kamerad
+mkurungenzi#Direktor
+mwalimu mkuu#Schulleiter, Rektor
+mwizi#Dieb
+bossi#Boss, Chef
+kiongozi#Anführer, Leiter
+%ESSEN
+mgahawa#Restaurant
+tangawizi#Ingwer
+vyombo#Geschirr
+korosho#Cashews
+karanga#Erdnüsse
+juisi#Saft
+nyanya#Tomate
+kikombe#Tasse
+uma#Gabel
+kisu#Messer
+pombe#Alkohol
+jiko#Küche / Herd / Ofen
+chupa#Flasche
+keki#Kuchen
+nyanya#Tomate
+epo#Apfel
+(ma)chungwa#Orange
+(ma)yai#Ei
+papai#Papaya
+vitunguu#Zwiebeln
+viazi#Kartoffeln
+piza#Pizza
+bia#Bier
+chai#Tee
+Ugali#widerliche Mais-Pampe. pfui
+supu#Suppe
+tambi#Nudeln
+mapera#Guaven
+chipsy mayai#Pommes-Omlett
+ndizi#Banane
+chakula#Essen
+soko#Markt
+(ma)tunda#Frucht
+maziwa#Milch/Brüste
+kahawa#Kaffee
+mishkake#Fleischspieße
+nazi#Kokosnuss
+samaki#Fisch
+karafu#Nelken
+%ZEIT
+wiki#Woche
+tarehe#Datum
+mwezi#Monat
+mwaka#Jahr
+siku#Tag
+usiku#Nacht
+asubuhi#Morgen
+mchana#Mittag/Nachmittag
+jioni#Abend
+jumamosi#Samstag
+jumapili#Sonntag
+jumatatu#Montag
+jumanne#Dienstag
+jumatano#Mittwoch
+alhamisi#Donnerstag
+ijumaa#Freitag
+%PRÄPOSITIONEN
+juu#über
+chini#unter
+karibu#neben/nah
+mbele#vor
+nyuma#hinter
+mbali#fern
+kando#entlang
+ndani#drinnen
+nje#draußen
+pembeni#daneben
+kati ya#(Wahl) zwischen
+katikati#(örtlich) zwischen
+kulia#rechts
+kushoto#links
+moja kwa moja#geradeaus
+badala (yangu)#anstatt (mir)
+baada ya#(zeitlich) danach
+kabla ya#(zeitlich) davor

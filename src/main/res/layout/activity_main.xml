@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/categoryMenu"
+            android:tooltipText="@string/categoryName"
+            android:layout_width="match_parent"
+            android:layout_weight="0.1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/placeholder1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/displayCategory"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:layout_gravity="bottom"
+            android:text="@string/categoryName"
+            android:textSize="15sp"
+            android:textColor="#888888"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/displayQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/questionName"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/displayAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answerName"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/goButton"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_weight="0.5"
+            android:text="@string/buttonName" />
+        <TextView
+            android:id="@+id/placeholder2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:gravity="center"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/settingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginBottom="20sp"
+            android:layout_weight="0.2"
+            android:alpha="0.5"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            app:backgroundTint="@color/grey"
+            tools:srcCompat="@android:drawable/ic_menu_info_details" />
+
+
+    </LinearLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
