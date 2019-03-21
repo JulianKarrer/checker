@@ -5,6 +5,8 @@
     <string name="questionName">Frage</string>
     <string name="answerName">Antwort</string>
     <string name="buttonName">GO!</string>
-    <string name="settingsText">COPYRIGHT \n Diese App wurde von Julian Karrer gebastelt. Die Vokabeln stammen aus unserem Sprachunterricht, vollkommen garaniteren, dass alle Vokabeln stimmen, kann ich aber nicht. Wer sich den Sourcecode der App anschauen möchte kann mir gerne auf juliankarrer@t-online.de schreiben. Ich erhebe kein Copyright auf irgendwas, außer für kommerzielle Zwecke, das hier soll gratis bleiben. Viel Spaß!</string>
+    <string name="copyrightText">COPYRIGHT © \nDiese App wurde 2019 von Julian Karrer gebastelt und unter der MIT-Lizenz veröffentlicht. Den Sourcecode gibt es unter https://github.com/JulianKarrer/checker. \n\n Karibu sana! </string>
+    <string name="instructionsText">VOKABELN HINZUFÜGEN \n\n Um selbst Vokabeln zu der Liste zu ergänzen, bearbeiten sie die checkerVocabulary.txt Datei im internen Speicher ihres Smartphones. Die Datei ist per File Explorer auf dem Smartphone oder per USB-Verbindung an einen PC einzusehen. Pro Zeile ist eine Vokabel zu schreiben, im Format: \n %KATEGORIE \n Kiswaheli Vokabel # Deutsche Übersetzung \n\n Die Raute dient dabei als Trennsymbol. \n Nach einer Kategorieangabe mit % können beliebig viele Vokabeln dieser Kategorie folgen. Wird ein Kategorienname genutzt, der bereits vorhanden ist, so werden die nachfolgenden Vokabelzeilen dieser Kategorie zugerechnet.</string>
     <string name="searchBarHint">Suchen …</string>
+    <string name="noSearchResults">Es wurden keine entsprechenden Vokabeln gefunden.</string>
 </resources>

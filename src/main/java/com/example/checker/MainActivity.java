@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.MenuItem;
 import android.graphics.Typeface;
@@ -19,22 +20,22 @@ import android.widget.ArrayAdapter;
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.Random;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-    private static String vocString = "";
-    private static String[] lines = {};
-    public static ArrayList<Pair<String,String>> allVOC = new ArrayList<Pair<String,String>>(){};
-    private static ArrayList<Pair<String,String>> allVOCInRandomOrder = new ArrayList<Pair<String,String>>(){};
-    public static ArrayList<Pair<String,String>> VOCofCurrentCategory = new ArrayList<Pair<String,String>>(){};
 
-    public static int categoryCounter = 0;
-    private static int allRandomCounter = 0;
-    private static boolean isQuestion = true;
+    public static ArrayList<Pair<String,String>> allVOC = new ArrayList<Pair<String,String>>(){};
+    public static ArrayList<Pair<String,String>> VOCofCurrentCategory = new ArrayList<Pair<String,String>>(){};
     public static String currentCategory = "Zufall";
     public static ArrayList<Integer> vocabOrder = new ArrayList<Integer>(){};
+    public static int categoryCounter = 0;
+
+    private static String vocString = "";
+    private static String[] lines = {};
+    private static ArrayList<Pair<String,String>> allVOCInRandomOrder = new ArrayList<Pair<String,String>>(){};
+    private static int allRandomCounter = 0;
+    private static boolean isQuestion = true;
 
 
     @Override
@@ -63,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //allow type-to-search functionality when using keyboards
+        setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
         //initialize widgets
         final TextView displayQuestion = findViewById(R.id.displayQuestion);
@@ -74,34 +76,35 @@ public class MainActivity extends AppCompatActivity {
         displayQuestion.setTypeface(futura_medium);
         displayAnswer.setTypeface(futura_medium);
         displayCategory.setTypeface(futura_medium);
-        //fill text fields
-        displayCategory.setText(R.string.categoryName);
-        displayQuestion.setText(R.string.questionName);
-        displayAnswer.setText(R.string.answerName);
 
         //create "settings" button
         final FloatingActionButton settingsButton = findViewById(R.id.settingsButton);
+        //create "search" button
+        final ImageButton searchButton = findViewById(R.id.searchButton);
 
 
         //READ VOCABULARY FROM TXT FILE
         //import from the included vocabulary list
         importVocFromTxt("voc/voc.txt");
-        //create File on SD card for Users to add Vocabulary, import from it
-        File sdCard = Environment.getExternalStorageDirectory();
-        File externalVocFile = new File(sdCard,"checkerVocabulary.txt");
-        try{ externalVocFile.createNewFile();}catch(Exception e){}
+        //create File on Internal Storage for Users to add Vocabulary, import from it
+        String internalStoragePath = getFilesDir().getAbsolutePath();
+        File externalVocFile = new File(internalStoragePath,"checkerVocabulary.txt");
+        try{ externalVocFile.createNewFile();}catch(Exception e){e.printStackTrace();}
         importVocFromTxt(externalVocFile.getAbsolutePath());
 
         //create another VOC list in random order for the "Zufall" category (random order for other categories is handled upon category selection)
         //PASS A COPY, NOT A POINTER! copy byval
         allVOCInRandomOrder = randomizedVOCOrder((ArrayList<Pair<String, String>>)allVOC.clone());
 
-        //ADD VOCABULARY TO DICTIONARIES TO ENABLE QUICK SEARCH (translations in both directions)
-
-
-
         //CREATE AND SET DROPDOWN MENU
         createMenu();
+
+        //REACT TO "SEARCH BUTTON" PRESS (search is then handled in SearchableActivity, as declared in the Manifest.xml)
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onSearchRequested();
+            }});
+
 
         //REACT TO "SETTINGS" BUTTON
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -199,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        catch(Exception e){}
+        catch(Exception e){e.printStackTrace();}
     }
 
     //should be called after all imports have been done,
@@ -229,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             spinner.setOnItemSelectedListener(new SpinnerActivity());
 
 
-        }catch(Exception e){}
+        }catch(Exception e){e.printStackTrace();}
    }
 
     private ArrayList<Pair<String,String>> randomizedVOCOrder(ArrayList<Pair<String,String>> oldOrder){
