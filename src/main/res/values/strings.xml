@@ -9,4 +9,5 @@
     <string name="instructionsText">VOKABELN HINZUFÜGEN \n\n Um selbst Vokabeln zu der Liste zu ergänzen, bearbeiten sie die checkerVocabulary.txt Datei im internen Speicher ihres Smartphones. Die Datei ist per File Explorer auf dem Smartphone oder per USB-Verbindung an einen PC einzusehen. Pro Zeile ist eine Vokabel zu schreiben, im Format: \n %KATEGORIE \n Kiswaheli Vokabel # Deutsche Übersetzung \n\n Die Raute dient dabei als Trennsymbol. \n Nach einer Kategorieangabe mit % können beliebig viele Vokabeln dieser Kategorie folgen. Wird ein Kategorienname genutzt, der bereits vorhanden ist, so werden die nachfolgenden Vokabelzeilen dieser Kategorie zugerechnet.</string>
     <string name="searchBarHint">Suchen …</string>
     <string name="noSearchResults">Es wurden keine entsprechenden Vokabeln gefunden.</string>
+    <string name="swapLanguagesSwitch">Richtung der Übersetzung tauschen</string>
 </resources>

@@ -4,6 +4,8 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class Settings extends AppCompatActivity {
@@ -12,6 +14,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        final Switch swapLanguagesSwitch = findViewById(R.id.swapLanguagesSwitch);
 
         //set font
         final Typeface futura_medium = Typeface.createFromAsset(getAssets(),  "fonts/futura_medium.ttf");
@@ -19,13 +22,15 @@ public class Settings extends AppCompatActivity {
         creditsAndCopyright.setTypeface(futura_medium);
         creditsAndCopyright.setLineSpacing(0,2);
 
-
-
-
-
-
-
-
+        //SWAP LANGUAGES BUTTON
+        //initiate "swap languages" switch to the state of the swapLanguages variable in MainActivity
+        //this is necessary because the state of the switch is reset when the Settings window is closed.
+        swapLanguagesSwitch.setChecked(MainActivity.swapLangages);
+        //react to the "swap languages" switch being switched
+        swapLanguagesSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                MainActivity.swapLangages = swapLanguagesSwitch.isChecked(); }
+        });
 
     }
 

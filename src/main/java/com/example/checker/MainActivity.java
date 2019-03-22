@@ -24,13 +24,17 @@ import java.util.Random;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-
+    //list of voc
     public static ArrayList<Pair<String,String>> allVOC = new ArrayList<Pair<String,String>>(){};
+    //category selection
     public static ArrayList<Pair<String,String>> VOCofCurrentCategory = new ArrayList<Pair<String,String>>(){};
     public static String currentCategory = "Zufall";
     public static ArrayList<Integer> vocabOrder = new ArrayList<Integer>(){};
     public static int categoryCounter = 0;
-
+    //"swap languages" button
+    public static boolean swapLangages = false;
+    public static boolean goPressed = false;
+    //read in txt file
     private static String vocString = "";
     private static String[] lines = {};
     private static ArrayList<Pair<String,String>> allVOCInRandomOrder = new ArrayList<Pair<String,String>>(){};
@@ -117,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.goButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                goPressed = true;
                 Random random = new Random();
 
                 //Category All - choose random vocab
@@ -127,10 +132,10 @@ public class MainActivity extends AppCompatActivity {
                     if(isQuestion){
                         displayAnswer.setText("");
                         displayCategory.setText(currentCategory);
-                        displayQuestion.setText(allVOCInRandomOrder.get(allRandomCounter).second.split("#")[1]);
+                        displayQuestion.setText(allVOCInRandomOrder.get(allRandomCounter).second.split("#")[swapLangages?0:1]);
                         isQuestion=false;
                     }else{
-                        displayAnswer.setText(allVOCInRandomOrder.get(allRandomCounter).second.split("#")[0]);
+                        displayAnswer.setText(allVOCInRandomOrder.get(allRandomCounter).second.split("#")[swapLangages?1:0]);
                         displayCategory.setText(currentCategory);
                         isQuestion=true;
                         allRandomCounter ++;
@@ -150,10 +155,10 @@ public class MainActivity extends AppCompatActivity {
                     if(isQuestion){
                         displayAnswer.setText("");
                         displayCategory.setText(currentCategory);
-                        displayQuestion.setText(VOCofCurrentCategory.get(vocabOrder.get(categoryCounter)).second.split("#")[1]);
+                        displayQuestion.setText(VOCofCurrentCategory.get(vocabOrder.get(categoryCounter)).second.split("#")[swapLangages?0:1]);
                         isQuestion=false;
                     }else{
-                        displayAnswer.setText(VOCofCurrentCategory.get(vocabOrder.get(categoryCounter)).second.split("#")[0]);
+                        displayAnswer.setText(VOCofCurrentCategory.get(vocabOrder.get(categoryCounter)).second.split("#")[swapLangages?1:0]);
                         displayCategory.setText(currentCategory);
                         isQuestion=true;
                         categoryCounter++;
@@ -252,7 +257,6 @@ public class MainActivity extends AppCompatActivity {
        //return the new, randomized order
         return newOrder;
    }
-
 
 
 

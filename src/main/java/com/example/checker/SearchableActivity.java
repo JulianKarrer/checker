@@ -46,8 +46,8 @@ public class SearchableActivity extends ListActivity {
         queryResults.clear();
         for (Pair p:MainActivity.allVOC) {  //uses String.contains method to search all vocabulary for the query text
             String pData = (String) p.second;
-            String firstString=pData.split("#")[0];
-            String secondString=pData.split("#")[1];
+            String firstString=pData.split("#")[MainActivity.swapLangages?0:1];
+            String secondString=pData.split("#")[MainActivity.swapLangages?1:0];
             //if an entry in the allVOC database contains the search query, add it to the queryResults ArrayList
             if(firstString.contains(query) || secondString.contains(query)){
                 queryResults.add(firstString + " - " + secondString);
