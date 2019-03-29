@@ -7,40 +7,64 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.util.Pair;
 import java.util.Random;
 
+import static com.example.checker.MainActivity.*;
+
 public class SpinnerActivity implements OnItemSelectedListener {
     public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
         //select new category
-        MainActivity.currentCategory =  parent.getItemAtPosition(pos).toString();
+        currentCategory =  parent.getItemAtPosition(pos).toString();
+
+        //reset category counter so that when already at high number, switching to a smaller category will not cause a nullPointer
+        categoryCounter = 0;
 
         //count number of entries for selected category
         //add them to VOCofCurrentCategory list
         int noOfVocInCategory = 0;
-        MainActivity.VOCofCurrentCategory.clear();
-        for (Pair<String,String> p:MainActivity.allVOC) {
+        VOCofCurrentCategory.clear();
+        for (Pair<String,String> p:allVOC) {
             if (p.first.equals(parent.getItemAtPosition(pos).toString())) {
-                MainActivity.VOCofCurrentCategory.add(p);
+                VOCofCurrentCategory.add(p);
                 noOfVocInCategory++;
             }
         }
-        //create random order for the category to be cycled through
-        MainActivity.vocabOrder.clear();
-        Random random = new Random();
-        while(MainActivity.vocabOrder.size()<noOfVocInCategory) {
-            int r = random.nextInt(noOfVocInCategory);
-            if (!MainActivity.vocabOrder.contains(r)) {
-                MainActivity.vocabOrder.add(r);
-            }
+        if (parent.getItemAtPosition(pos).toString().equals("FAVORITEN")) {
+            favouritesRandomizeOrder();
         }
-
-        //reset the categoryCounter
-        MainActivity.categoryCounter =0;
-
+        else{
+            categoryRandomizeOrder(noOfVocInCategory);
+        }
 
 
     }
 
+
+    //create random vocabOrder in which to cycle through favourites ArrayList
+    public static void favouritesRandomizeOrder(){
+        Random random = new Random();
+        favouritesOrder.clear();
+        while (favouritesOrder.size() < favourites.size()) {
+            Integer randNum = random.nextInt(favourites.size());
+            if (!favouritesOrder.contains(randNum)) {
+                favouritesOrder.add(randNum);
+            }
+        }
+    }
+
+    //create random order for the category to be cycled through
+    private static void categoryRandomizeOrder(int noOfVocInCategory){
+        Random random = new Random();
+        vocabOrder.clear();
+        while(vocabOrder.size()<noOfVocInCategory) {
+            int r = random.nextInt(noOfVocInCategory);
+            if (!vocabOrder.contains(r)) {
+                vocabOrder.add(r);
+            }
+        }
+    }
+
+        //the random order for the "all" category is generated in MainActivity
+
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
     }
 }

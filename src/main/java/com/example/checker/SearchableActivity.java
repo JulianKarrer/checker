@@ -3,11 +3,9 @@ package com.example.checker;
 import android.app.ListActivity;
 import android.app.SearchManager;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Pair;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import java.lang.String;
 
@@ -46,8 +44,8 @@ public class SearchableActivity extends ListActivity {
         queryResults.clear();
         for (Pair p:MainActivity.allVOC) {  //uses String.contains method to search all vocabulary for the query text
             String pData = (String) p.second;
-            String firstString=pData.split("#")[MainActivity.swapLangages?0:1];
-            String secondString=pData.split("#")[MainActivity.swapLangages?1:0];
+            String firstString=pData.split("#")[MainActivity.swapLanguages ?0:1];
+            String secondString=pData.split("#")[MainActivity.swapLanguages ?1:0];
             //if an entry in the allVOC database contains the search query, add it to the queryResults ArrayList
             if(firstString.contains(query) || secondString.contains(query)){
                 queryResults.add(firstString + " - " + secondString);

@@ -35,10 +35,10 @@
                 android:layout_weight="1"
                 android:src="@android:drawable/ic_search_category_default"
                 android:scaleType="fitCenter"
+                android:background="@null"
                 android:adjustViewBounds="true"/>
 
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/placeholder1"
@@ -48,7 +48,6 @@
             android:textSize="30sp"
             android:textColor="#000"
             android:gravity="center"/>
-
         <TextView
             android:id="@+id/displayCategory"
             android:layout_width="match_parent"
@@ -59,6 +58,17 @@
             android:textSize="15sp"
             android:textColor="#888888"
             android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/favouriteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.01"
+            android:layout_gravity="end"
+            android:layout_marginRight="20sp"
+            android:layout_marginEnd="20sp"
+            android:background="@null"
+            app:srcCompat="@android:drawable/btn_star_big_off" />
         <TextView
             android:id="@+id/displayQuestion"
             android:layout_width="match_parent"
@@ -68,6 +78,7 @@
             android:textSize="30sp"
             android:textColor="#000"
             android:gravity="center"/>
+
         <TextView
             android:id="@+id/displayAnswer"
             android:layout_width="match_parent"
