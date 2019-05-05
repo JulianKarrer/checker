@@ -18,26 +18,16 @@
             android:id="@+id/swapLanguagesSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
-            android:layout_marginTop="30sp"
-            android:layout_marginEnd="30sp"
+            android:layout_margin="30sp"
             android:shadowColor="@color/grey"
             android:textColor="@color/grey"
             android:text="@string/swapLanguagesSwitch"/>
-        <TextView
-            android:id="@+id/instructions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
-            android:layout_marginTop="30sp"
-            android:layout_marginEnd="30sp"
-            android:text="@string/instructionsText" />
+
         <TextView
             android:id="@+id/creditsAndCopyright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30sp"
-            android:layout_marginTop="30sp"
             android:layout_marginEnd="30sp"
             android:text="@string/copyrightText" />
 

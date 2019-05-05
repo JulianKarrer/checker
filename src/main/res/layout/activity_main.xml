@@ -104,21 +104,39 @@
             android:gravity="center"/>
 
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/settingsButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_gravity="right"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="0.2"
-            android:alpha="0.5"
-            android:clickable="true"
-            android:focusable="true"
-            android:hapticFeedbackEnabled="true"
-            app:backgroundTint="@color/grey"
-            tools:srcCompat="@android:drawable/ic_menu_info_details" />
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/settingsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="20dp"
+                android:layout_weight="0.3"
+                android:alpha="0.5"
+                android:clickable="true"
+                android:focusable="true"
+                android:hapticFeedbackEnabled="true"
+                app:backgroundTint="@color/grey"
+                tools:srcCompat="@android:drawable/ic_menu_info_details" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/openTextEditorButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="20dp"
+                android:layout_weight="0.3"
+                android:alpha="0.5"
+                android:clickable="true"
+                android:focusable="true"
+                android:hapticFeedbackEnabled="true"
+                app:backgroundTint="@color/grey"
+                tools:srcCompat="@android:drawable/ic_menu_info_details" />
+        </LinearLayout>
 
     </LinearLayout>
 

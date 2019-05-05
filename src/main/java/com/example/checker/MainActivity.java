@@ -1,12 +1,11 @@
 package com.example.checker;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
@@ -20,7 +19,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -45,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     public static boolean swapLanguages = false;
     public static boolean goPressed = false;
     //read in txt file
-    private static String vocString = "";
     private static String[] lines = {};
     private static ArrayList<Pair<String,String>> allVOCInRandomOrder = new ArrayList<Pair<String,String>>(){};
     private static int allRandomCounter = 0;
@@ -88,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         final FloatingActionButton settingsButton = findViewById(R.id.settingsButton);
         final ImageButton searchButton = findViewById(R.id.searchButton);
         final ImageButton favouriteButton = findViewById(R.id.favouriteButton);
+        final FloatingActionButton openTextEditorButton = findViewById(R.id.openTextEditorButton);
         //set font
         final Typeface futura_medium = Typeface.createFromAsset(getAssets(),  "fonts/futura_medium.ttf");
         displayQuestion.setTypeface(futura_medium);
@@ -96,19 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        //READ VOCABULARY FROM TXT FILE
-        //import from the included vocabulary list
-        importVocFromTxt("voc/voc.txt");
-        //create File on Internal Storage for Users to add Vocabulary, import from it
-        String internalStoragePath = getFilesDir().getAbsolutePath();
-        File externalVocFile = new File(internalStoragePath,"checkerVocabulary.txt");
-        try{ externalVocFile.createNewFile();}catch(Exception e){e.printStackTrace();}
-        importVocFromTxt(externalVocFile.getAbsolutePath());
-
-        //create another VOC list in random order for the "ZUFALL" category (random order for other categories is handled upon category selection)
-        //PASS A COPY, NOT A POINTER! copy byval
-        allVOCInRandomOrder = randomizedVOCOrder((ArrayList<Pair<String, String>>)allVOC.clone());
+        //IMPORTS
+        //import from the included vocabulary list and the inbuilt text editor (saved from previous sessions)
+        importVocFromTxt("voc"+ File.separator +"voc.txt");
+        loadTextEditorVoc();
 
         //restore favourites from preferences (persistence)
         restoreFavourites();
@@ -128,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent settingsIntent = new Intent(getApplicationContext(), Settings.class);
                 MainActivity.this.startActivity(settingsIntent);
+                createMenu();
             }});
 
         //REACT TO "FAVOURITE" BUTTON
@@ -152,6 +142,14 @@ public class MainActivity extends AppCompatActivity {
                     saveFavourites();
                 }
             }});
+
+        //REACT TO "ADD VOCABULARY" BUTTON
+        openTextEditorButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent textEditorIntent = new Intent(getApplicationContext(), TextEditor.class);
+                startActivityForResult(textEditorIntent,1337);
+            }});
+
 
         //REACT TO "GO!" BUTTON PRESS
         final Button button = findViewById(R.id.goButton);
@@ -182,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case "FAVORITEN":   //favourite category was selected
-                        int i = 0;  //TODO debug
                         if(!favourites.isEmpty()){  //prevent null pointer exception when entering an empty favourites category
                             //if categoryCounter reaches end of current category, reset to zero
                             if(categoryCounter ==favourites.size()){
@@ -242,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void importVocFromTxt(String filePathToTxt){
+    public void importVocFromTxt(String filePathToTxt){
         try{
             AssetManager assetManager = getAssets();
             InputStream vocFile = assetManager.open(filePathToTxt);
@@ -253,36 +250,36 @@ public class MainActivity extends AppCompatActivity {
             while ((length = vocFile.read(buffer)) != -1) {
                 result.write(buffer, 0, length);
             }
-            // StandardCharsets.UTF_8.name() > JDK 7
-            vocString = result.toString("UTF-8");
 
-            //convert string to Arraylist of <Category,Question#Answer> pairs
-            lines = vocString.replaceAll("\r","").split("\n");
-            String currentCategory = "test";
-            for (int i=0; i<lines.length;i++) {
-                if(lines[i].startsWith("%")){
-                    currentCategory  = lines[i].replace("%","");
+            //convert string to Arraylist of <Category,Question#Answer> pairs       StandardCharsets.UTF_8.name() > JDK 7
+            lines =  result.toString("UTF-8").replaceAll("\r","").split("\n");
+            String category = "test";
+            for (String s:lines) {
+                if(s.startsWith("%")){
+                    category  = s.replace("%","");
                 }
                 else{
                     //check if line has correct format
-                    if(lines[i].contains("#") && lines[i].split("#")[0] != null && lines[i].split("#")[1] != null)
+                    if(s.contains("#") && s.split("#")[0] != null && s.split("#")[1] != null)
                     //add line to allVOC if not already existent
                     {
-                        if(!allVOC.contains(new Pair<>(currentCategory,lines[i])))
-                        {allVOC.add(new Pair<>(currentCategory,lines[i]));}
+                        if(!allVOC.contains(new Pair<>(category,s)))
+                        {allVOC.add(new Pair<>(category,s+"#internal"));}
                     }
                 }
             }
         }
-        catch(Exception e){e.printStackTrace();}
+        catch(Exception e){e.printStackTrace(); System.out.print(e.getMessage()); }
+        updateAllVocRandomOrder();
     }
+
 
     //should be called after all imports have been done,
     //otherwise the newly imported vocabulary will only show up in the "Zufall" category
     private void createMenu(){
         try {
             //create and set menu
-            Spinner spinner = (Spinner) findViewById(R.id.categoryMenu);
+            Spinner spinner = findViewById(R.id.categoryMenu);
             //collect category names from allVOC and convert them to a ArrayList of Strings
             ArrayList<String> listOfCategories = new ArrayList<String>() {
             };
@@ -308,6 +305,11 @@ public class MainActivity extends AppCompatActivity {
         }catch(Exception e){e.printStackTrace();}
    }
 
+    //create another VOC list in random order for the "ZUFALL" category (random order for other categories is handled upon category selection)
+    //PASS A COPY, NOT A POINTER! copy byval
+    private void updateAllVocRandomOrder(){
+        allVOCInRandomOrder = randomizedVOCOrder((ArrayList<Pair<String, String>>)allVOC.clone());
+    }
     private ArrayList<Pair<String,String>> randomizedVOCOrder(ArrayList<Pair<String,String>> oldOrder){
        ArrayList<Integer> order = new ArrayList<Integer>(){};
        //create random list of indexes
@@ -331,20 +333,50 @@ public class MainActivity extends AppCompatActivity {
    private void saveFavourites(){
        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
        SharedPreferences.Editor editor = preferences.edit();
-       editor.clear();  //risky: if application shuts down before apply() call below, data will be lost.
+       //first, remove existing entries whose keys start with the "favourites" indicator
+       //risky: if application shuts down before apply() call below, data will be lost.
+       Map<String, ?> map = preferences.getAll();
+       for(Map.Entry<String, ?> entry : map.entrySet()){
+           if (entry.getKey().startsWith("favourites")){editor.remove(entry.getKey());}
+       }
+       //then, add all current favourites and add the "favourites" prefix to their keys
        for (Pair p:favourites) {
-           editor.putString(p.second.toString(),p.first+"%"+p.second);
+           editor.putString("favourites"+p.first+"%"+p.second, p.first+"%"+p.second);
        }
        editor.apply();
    }
-
    private void restoreFavourites(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Map<String, ?> map = preferences.getAll();
         for (Map.Entry<String, ?> entry : map.entrySet()) {
+            if (entry.getKey().startsWith("favourites")){
                 Pair<String,String> p = new Pair<>(entry.getValue().toString().split("%")[0],entry.getValue().toString().split("%")[1]);
                 favourites.add(p);
+            }
         }
+    }
+
+    //load updated textEditor vocabulary into allVoc and generate new random order for allvoc
+    public void loadTextEditorVoc(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Map<String, ?> map = preferences.getAll();
+        //remove all previous textEditor vocabulary
+        for (Pair p:allVOC){
+            if(p.second.toString().endsWith("#external")){
+                allVOC.remove(p);
+            }
+        }
+
+        //add the new textEditor vocabulary
+        for (Map.Entry<String, ?> entry : map.entrySet()) {
+            if (entry.getKey().startsWith("textEditor")){
+                Pair<String,String> p = new Pair<>(entry.getValue().toString().split("%")[0],
+                                                   entry.getValue().toString().split("%")[1]+"#external");
+                allVOC.add(p);
+            }
+        }
+        updateAllVocRandomOrder();
+        createMenu();
     }
 
    //override all closing events to save favourites to memory before exiting app
@@ -360,10 +392,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
+    //catch results and return values from intents started from MainActivity
+    //catch exiting the TextEditor -> call loadTextEditorVoc()
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode){
+            //if texteditor was closed
+            case 1337:
+                loadTextEditorVoc();
+                break;
+        }
+    }
 }
 
