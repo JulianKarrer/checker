@@ -11,11 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.Menu;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
 import android.graphics.Typeface;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Pair<String,String>> VOCofCurrentCategory = new ArrayList<Pair<String,String>>(){};
     public static String currentCategory = "ZUFALL";
     public static ArrayList<Integer> vocabOrder = new ArrayList<Integer>(){};
-    public static int categoryCounter = 0;
-    //"swap languages" button
+    public static int categoryCounter = 0;//"swap languages" button
     public static boolean swapLanguages = false;
     public static boolean goPressed = false;
     //read in txt file
@@ -80,10 +79,16 @@ public class MainActivity extends AppCompatActivity {
 
         //initialize views
         final TextView displayQuestion = findViewById(R.id.displayQuestion);
+        displayQuestion.setBackgroundResource(R.drawable.frage);
         final TextView displayAnswer = findViewById(R.id.displayAnswer);
+        displayAnswer.setBackgroundResource(R.drawable.antwort_v2);
         final TextView displayCategory = findViewById(R.id.displayCategory);
+        final ImageButton button = findViewById(R.id.goButton);
+        button.setImageResource(R.drawable.go);
+        button.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         final FloatingActionButton settingsButton = findViewById(R.id.settingsButton);
         final ImageButton searchButton = findViewById(R.id.searchButton);
+        searchButton.setImageResource(R.drawable.suche);
         final ImageButton favouriteButton = findViewById(R.id.favouriteButton);
         final FloatingActionButton openTextEditorButton = findViewById(R.id.openTextEditorButton);
         //set font
@@ -152,7 +157,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         //REACT TO "GO!" BUTTON PRESS
-        final Button button = findViewById(R.id.goButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goPressed = true;
@@ -290,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //add all the Category names in the ArrayList to the Menu Adapter
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.a_layout_file);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item){};
             adapter.add("ZUFALL");
             adapter.add("FAVORITEN");
             for (String s : listOfCategories) {

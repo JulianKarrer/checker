@@ -1,146 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/mediumblue">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="0.1"
-            android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/categoryMenu"
-                android:tooltipText="@string/categoryName"
-                android:layout_width="match_parent"
-                android:layout_weight="0.2"
-                android:layout_height="wrap_content" />
-
-            <ImageButton
-                android:id="@+id/searchButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_search_category_default"
-                android:scaleType="fitCenter"
-                android:background="@null"
-                android:adjustViewBounds="true"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/placeholder1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:textSize="30sp"
-            android:textColor="#000"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/displayCategory"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:layout_gravity="bottom"
-            android:text="@string/categoryName"
-            android:textSize="15sp"
-            android:textColor="#888888"
-            android:gravity="center"/>
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/displayCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/categoryMenu"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/favouriteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:layout_gravity="end"
-            android:layout_marginRight="20sp"
-            android:layout_marginEnd="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="20dp"
             android:background="@null"
+            app:layout_constraintBottom_toTopOf="@+id/displayQuestion"
+            app:layout_constraintEnd_toEndOf="@+id/displayCategory"
+            app:layout_constraintTop_toTopOf="@+id/displayCategory"
             app:srcCompat="@android:drawable/btn_star_big_off" />
+
+
+        <ImageButton
+            android:id="@+id/goButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="32dp"
+            android:background="@null"
+            android:text="@string/buttonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/categoryMenu"
+            android:layout_width="253dp"
+            android:layout_height="40dp"
+            android:tooltipText="@string/categoryName"
+            app:layout_constraintEnd_toStartOf="@+id/searchButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchButton" />
+
         <TextView
             android:id="@+id/displayQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_width="320dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
             android:text="@string/questionName"
+            android:textColor="#fff"
             android:textSize="30sp"
-            android:textColor="#000"
-            android:gravity="center"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/displayAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_width="320dp"
+            android:layout_height="181dp"
+            android:gravity="center"
+            android:paddingBottom="65dp"
             android:text="@string/answerName"
+            android:textColor="#fff"
             android:textSize="30sp"
-            android:textColor="#000"
-            android:gravity="center"/>
-        <Button
-            android:id="@+id/goButton"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="0.5"
-            android:text="@string/buttonName" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/displayQuestion"
+            app:layout_constraintVertical_bias="0.237" />
+
         <TextView
-            android:id="@+id/placeholder2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:textSize="30sp"
-            android:textColor="#000"
-            android:gravity="center"/>
+            android:id="@+id/displayCategory"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/categoryName"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.4"
-            android:orientation="horizontal">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="32dp"
+            android:alpha="0.5"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:src="@android:drawable/ic_menu_info_details"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            app:fabCustomSize="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/goButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:useCompatPadding="true"
+            tools:srcCompat="@android:drawable/ic_menu_info_details" />
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/settingsButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_margin="20dp"
-                android:layout_weight="0.3"
-                android:alpha="0.5"
-                android:clickable="true"
-                android:focusable="true"
-                android:hapticFeedbackEnabled="true"
-                app:backgroundTint="@color/grey"
-                tools:srcCompat="@android:drawable/ic_menu_info_details" />
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/openTextEditorButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_margin="20dp"
-                android:layout_weight="0.3"
-                android:alpha="0.5"
-                android:clickable="true"
-                android:focusable="true"
-                android:hapticFeedbackEnabled="true"
-                app:backgroundTint="@color/grey"
-                tools:srcCompat="@android:drawable/ic_menu_info_details" />
-        </LinearLayout>
-
-    </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/openTextEditorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="32dp"
+            android:alpha="0.5"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:src="@android:drawable/ic_menu_add"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/goButton"
+            app:useCompatPadding="true"
+            tools:srcCompat="@android:drawable/ic_menu_info_details" />
 
 
+    </android.support.constraint.ConstraintLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

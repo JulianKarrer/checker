@@ -42,12 +42,14 @@ public class SearchableActivity extends ListActivity {
     private void handleQuery(String query){
         //first, reset the queryResults ArrayList
         queryResults.clear();
+        // Search results should not be case sensitive so the comparison itself is done after toLowerCase is applied to each term
+        query = query.toLowerCase();
         for (Pair p:MainActivity.allVOC) {  //uses String.contains method to search all vocabulary for the query text
             String pData = (String) p.second;
             String firstString=pData.split("#")[MainActivity.swapLanguages ?0:1];
             String secondString=pData.split("#")[MainActivity.swapLanguages ?1:0];
             //if an entry in the allVOC database contains the search query, add it to the queryResults ArrayList
-            if(firstString.contains(query) || secondString.contains(query)){
+            if(firstString.toLowerCase().contains(query) || secondString.toLowerCase().contains(query)){
                 queryResults.add(firstString + " - " + secondString);
             }
         }
