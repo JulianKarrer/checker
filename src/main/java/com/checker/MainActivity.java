@@ -1,4 +1,4 @@
-package com.example.checker;
+package com.checker;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +18,8 @@ import android.graphics.Typeface;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
+
+import com.checker.R;
 
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;

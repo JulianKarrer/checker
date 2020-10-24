@@ -1,4 +1,4 @@
-package com.example.checker;
+package com.checker;
 
 import android.widget.AdapterView;
 
@@ -7,7 +7,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.util.Pair;
 import java.util.Random;
 
-import static com.example.checker.MainActivity.*;
+import static com.checker.MainActivity.*;
 
 public class SpinnerActivity implements OnItemSelectedListener {
     public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {

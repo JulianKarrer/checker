@@ -1,4 +1,4 @@
-package com.example.checker;
+package com.checker;
 
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.checker.R;
 
 public class Settings extends AppCompatActivity {
 

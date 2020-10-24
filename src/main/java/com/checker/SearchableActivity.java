@@ -1,4 +1,4 @@
-package com.example.checker;
+package com.checker;
 
 import android.app.ListActivity;
 import android.app.SearchManager;
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 import android.widget.ArrayAdapter;
+
+import com.checker.R;
 
 import java.lang.String;
 
